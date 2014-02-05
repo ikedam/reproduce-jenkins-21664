@@ -1,0 +1,10 @@
+/jenkins-21664-dependee/.classpath
+/jenkins-21664-dependee/.settings
+/jenkins-21664-dependee/.project
+/jenkins-21664-dependee/target
+/jenkins-21664-dependee/work
+/jenkins-21664-depender/.classpath
+/jenkins-21664-depender/.project
+/jenkins-21664-depender/.settings
+/jenkins-21664-depender/target
+/jenkins-21664-depender/work
