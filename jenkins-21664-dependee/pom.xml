@@ -2,14 +2,15 @@
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>org.jenkins-ci.plugins</groupId>
-    <artifactId>plugin</artifactId>
-    <version>1.509.4</version><!-- which version of Jenkins is this plugin built against? -->
+    <artifactId>reproduce-jenkins-21664</artifactId>
+    <version>0.0.1</version>
   </parent>
 
   <groupId>org.jenkins-ci.plugins.reproduce-jenkins-21664</groupId>
   <artifactId>jenkins-21664-dependee</artifactId>
-  <version>1.0-SNAPSHOT</version>
   <packaging>hpi</packaging>
+
+  <url>https://github.com/ikedam/reproduce-jenkins-21664</url>
 
   <!-- get every artifact through repo.jenkins-ci.org, which proxies all the artifacts that we need -->
   <repositories>
