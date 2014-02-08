@@ -13,14 +13,31 @@
   <url>https://github.com/ikedam/reproduce-jenkins-21664</url>
 
   <dependencies>
+  <!--
     <dependency>
-      <groupId>${pom.groupId}</groupId>
+      <groupId>${project.groupId}</groupId>
       <artifactId>jenkins-21664-dependee</artifactId>
-      <version>${pom.version}</version>
+      <version>${project.version}</version>
+      <optional>true</optional>
+    </dependency>
+  -->
+    <dependency>
+      <groupId>org.jenkins-ci.main</groupId>
+      <artifactId>maven-plugin</artifactId>
+      <version>1.466</version>
       <optional>true</optional>
     </dependency>
   </dependencies>
 
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.jenkins-ci.tools</groupId>
+                <artifactId>maven-hpi-plugin</artifactId>
+                <version>1.95</version>
+            </plugin>
+        </plugins>
+    </build>
   <!-- get every artifact through repo.jenkins-ci.org, which proxies all the artifacts that we need -->
   <repositories>
     <repository>
