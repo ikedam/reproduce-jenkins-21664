@@ -22,54 +22,12 @@
  * THE SOFTWARE.
  */
 
-package org.jenkinsci.plugins.reproducejenkins21664.jenkins21664depender;
-
-import java.util.List;
-
-import org.jenkinsci.plugins.reproducejenkins21664.jenkins21664dependee.Dependee;
-
-import jenkins.model.Jenkins;
-import hudson.Extension;
-import hudson.model.Descriptor;
-import hudson.model.Describable;
+package org.jenkinsci.plugins.reproducejenkins21664.jenkins21664dependee;
 
 /**
  *
  */
-public class Depender implements Describable<Depender>
+public class Dependee extends Exception
 {
-    private List<Dependee> getList()
-    {
-        return null;
-    }
-    
-    public void doSomething()
-    {
-        if (Jenkins.getInstance().getPlugin("jenkins-21664-dependee") != null)
-        {
-            for(Exception r: getList())
-            {
-                doSomething(r);
-            }
-        }
-    }
-    
-    private void doSomething(Exception r)
-    {
-    }
-    
-    public Descriptor<Depender> getDescriptor()
-    {
-        return null;
-    }
-    
-    @Extension
-    public static class DescriptorImpl extends Descriptor<Depender>
-    {
-        @Override
-        public String getDisplayName()
-        {
-            return null;
-        }
-    }
+    private static final long serialVersionUID = 8991365925956350208L;
 }
