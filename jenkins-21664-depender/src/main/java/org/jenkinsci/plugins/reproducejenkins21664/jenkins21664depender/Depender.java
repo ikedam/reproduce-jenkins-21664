@@ -26,11 +26,11 @@ package org.jenkinsci.plugins.reproducejenkins21664.jenkins21664depender;
 
 import java.util.Collections;
 
-import org.jenkinsci.plugins.reproducejenkins21664.jenkins21664dependee.Dependee;
-
 import jenkins.model.Jenkins;
 import hudson.Extension;
+import hudson.maven.MavenBuild;
 import hudson.model.Descriptor;
+import hudson.model.Run;
 import hudson.model.Describable;
 
 /**
@@ -42,14 +42,14 @@ public class Depender implements Describable<Depender>
     {
         if (Jenkins.getInstance().getPlugin("jenkins-21664-dependee") != null)
         {
-            for(Exception r: Collections.<Dependee>emptyList())
+            for(Run<?,?> r: Collections.<MavenBuild>emptyList())
             {
                 doSomething(r);
             }
         }
     }
     
-    private void doSomething(Exception r)
+    private void doSomething(Run<?,?> r)
     {
     }
     

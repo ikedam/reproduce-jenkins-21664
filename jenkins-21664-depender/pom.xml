@@ -14,9 +14,9 @@
 
   <dependencies>
     <dependency>
-      <groupId>${project.groupId}</groupId>
-      <artifactId>jenkins-21664-dependee</artifactId>
-      <version>${project.version}</version>
+      <groupId>org.jenkins-ci.main</groupId>
+      <artifactId>maven-plugin</artifactId>
+      <version>1.466</version>
       <optional>true</optional>
     </dependency>
   </dependencies>
