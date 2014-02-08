@@ -24,12 +24,13 @@
 
 package org.jenkinsci.plugins.reproducejenkins21664.jenkins21664depender;
 
+import java.util.List;
+
+import jenkins.model.Jenkins;
 import hudson.Extension;
-import hudson.maven.MavenModuleSetBuild;
-import hudson.model.AbstractBuild;
+import hudson.maven.MavenBuild;
 import hudson.model.Descriptor;
 import hudson.model.Describable;
-import hudson.model.Hudson;
 import hudson.model.Run;
 
 /**
@@ -37,11 +38,16 @@ import hudson.model.Run;
  */
 public class Depender implements Describable<Depender>
 {
-    public void doSomething(AbstractBuild<?,?> build)
+    private List<MavenBuild> getList()
     {
-        if (Hudson.getInstance().getPlugin("maven-plugin") != null && (build instanceof MavenModuleSetBuild) )
+        return null;
+    }
+    
+    public void doSomething()
+    {
+        if (Jenkins.getInstance().getPlugin("maven-plugin") != null)
         {
-            for(Run<?, ?> r : ((MavenModuleSetBuild)build).getModuleLastBuilds().values())
+            for(Run<?, ?> r : getList())
             {
                 doSomething(r);
             }
